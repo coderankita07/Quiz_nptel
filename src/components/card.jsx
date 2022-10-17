@@ -2,19 +2,13 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import "../../styles/card.css";
 
-const Card = ({ questions, rightAnswers }) => {
-  const [selected, setSelect] = useState(-1);
-  const [answers, setAnswers] = useState([
-    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
-  ]);
-  const [reveal, setReveal] = useState([
-    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
-  ]);
-
+const Card = ({ questions, rightAnswers, images, ...props }) => {
+  const {answers, setAnswers, reveal, setReveal } = props;
   const { id } = useParams();
 
   const week1 = questions[`week${id}`];
   const rightAnswer = rightAnswers[`week${id}`];
+  const image = images[`week${id}`]
 
   if (week1 == undefined) return <></>;
 
@@ -59,6 +53,7 @@ const Card = ({ questions, rightAnswers }) => {
             <p>{question[0]}</p>
           </div>
 
+          {image[i] != "" && <img src={image[i]} />}
           {question.map((option, j) => {
             return (
               j != 0 && (

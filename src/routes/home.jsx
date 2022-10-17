@@ -2,8 +2,10 @@ import React from "react";
 import Navbar from "../components/navbar";
 import Sidebar from "../components/sidebar";
 import Main from "../components/main";
-import { questions, rightAnswers } from "../../db/db";
+import { questions, rightAnswers, images } from "../../db/db";
 import "../../styles/home.css";
+import { Navigate, Route, Routes } from "react-router-dom";
+import About from "./about";
 
 const Home = () => {
   return (
@@ -14,7 +16,16 @@ const Home = () => {
           <Sidebar className="left" />
         </div>
         <div className="right">
-          <Main className="right" questions={questions} rightAnswers={rightAnswers}/>
+          <Routes>
+            <Route
+              path="/week/:id"
+              element={
+                <Main questions={questions} rightAnswers={rightAnswers} images={images} />
+              }
+            />
+            <Route path="/about" element={<About />} />
+            <Route path="*" element={<Navigate to="/about" replace />} />
+          </Routes>
         </div>
       </div>
     </>
