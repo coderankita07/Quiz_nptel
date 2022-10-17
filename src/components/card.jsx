@@ -6,11 +6,11 @@ const Card = ({ questions, rightAnswers, images, ...props }) => {
   const {answers, setAnswers, reveal, setReveal } = props;
   const { id } = useParams();
 
-  const week1 = questions[`week${id}`];
+  const week = questions[`week${id}`];
   const rightAnswer = rightAnswers[`week${id}`];
   const image = images[`week${id}`]
 
-  if (week1 == undefined) return <></>;
+  if (week == undefined) return <></>;
 
   const optionClicked = (option) => {
     setSelect(option);
@@ -44,7 +44,7 @@ const Card = ({ questions, rightAnswers, images, ...props }) => {
     // setAnswers(copy);
   };
 
-  return week1.map((question, i) => {
+  return week.map((question, i) => {
     return (
       <>
         <div className="card" key={i}>
@@ -72,6 +72,7 @@ const Card = ({ questions, rightAnswers, images, ...props }) => {
               )
             );
           })}
+
 
           <button className="btn reveal-btn" onClick={() => handleReveal(i)}>
             Reveal Answer

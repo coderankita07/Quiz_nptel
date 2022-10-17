@@ -18,7 +18,7 @@ const Main = ({ questions, rightAnswers, images }) => {
   }, [id]);
 
 
-  const week1 = questions[`week${id}`];
+  const week = questions[`week${id}`];
   const rightAnswer = rightAnswers[`week${id}`];
 
   const handleReset = () => {
@@ -40,6 +40,8 @@ const Main = ({ questions, rightAnswers, images }) => {
     setRightResponse(count);
     console.log("Right answers: ", count);
   };
+
+  if(week == undefined) return <></>;
 
   return (
     <>
