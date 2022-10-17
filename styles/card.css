@@ -26,3 +26,7 @@
 #selected {
     color: black;
 }
+
+.reveal {
+    color: green !important;
+}

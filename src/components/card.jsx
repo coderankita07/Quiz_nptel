@@ -23,6 +23,7 @@ const Card = ({ questions, rightAnswers }) => {
   };
 
   const handleSelection = (i, j) => {
+    if (reveal[i] != -1) return;
     const copy = [...answers];
     if (copy[i] == j) copy[i] = -1;
     else copy[i] = j;
@@ -31,53 +32,63 @@ const Card = ({ questions, rightAnswers }) => {
   };
 
   const handleClearResponse = (i) => {
-    const copy = [...answers];
+    let copy = [...answers];
     copy[i] = -1;
     setAnswers(copy);
+
+    copy = [...reveal];
+    copy[i] = -1;
+    setReveal(copy);
   };
 
   const handleReveal = (i) => {
-    const copy = [...answers];
+    const copy = [...reveal];
     copy[i] = rightAnswer[i];
-    setAnswers(copy);
+    setReveal(copy);
+    // const copy = [...answers];
+    // copy[i] = rightAnswer[i];
+    // setAnswers(copy);
   };
-
-  let row, col;
 
   return week1.map((question, i) => {
     return (
-      <div className="card" key={i}>
-        <div className="que-statement">
-          <h3>Question {i + 1}:</h3>
-          <p>{question[0]}</p>
-        </div>
+      <>
+        <div className="card" key={i}>
+          <div className="que-statement">
+            <h3>Question {i + 1}:</h3>
+            <p>{question[0]}</p>
+          </div>
 
-        {question.map((option, j) => {
-          return (
-            j != 0 && (
-              <div className="options" key={j}>
-                <div
-                  className="option"
-                  id={answers[i] == j ? "selected" : undefined}
-                  onClick={() => handleSelection(i, j)}
-                >
-                  <span className="option-tag">
-                    {String.fromCharCode(64 + j)}:
-                  </span>
-                  <span className="option-value">{option}</span>
+          {question.map((option, j) => {
+            return (
+              j != 0 && (
+                <div className="options" key={j}>
+                  <div
+                    className={reveal[i] == j ? "option reveal" : "option"}
+                    id={answers[i] == j ? "selected" : undefined}
+                    onClick={() => handleSelection(i, j)}
+                  >
+                    <span className="option-tag">
+                      {String.fromCharCode(64 + j)}:
+                    </span>
+                    <span className="option-value">{option}</span>
+                  </div>
                 </div>
-              </div>
-            )
-          );
-        })}
+              )
+            );
+          })}
 
-        <button className="btn reveal" onClick={() => handleReveal(i)}>
-          Reveal Answer
-        </button>
-        <button className="btn clear" onClick={() => handleClearResponse(i)}>
-          Clear Response
-        </button>
-      </div>
+          <button className="btn reveal-btn" onClick={() => handleReveal(i)}>
+            Reveal Answer
+          </button>
+          <button
+            className="btn clear-btn"
+            onClick={() => handleClearResponse(i)}
+          >
+            Clear Response
+          </button>
+        </div>
+      </>
     );
   });
 
