@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  margin: 7rem 4rem;
+  position: relative;
+}
+
+.left {
+  position: fixed;
+  top: 7rem;
+}
+
+.right {
+  margin-left: 18.5rem;
+  flex: 1;
+}

@@ -1,0 +1,7 @@
+*, ::after, ::before {
+    margin: 0;
+}
+
+html {
+    font-size: 65%;
+}

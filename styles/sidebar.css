@@ -1,0 +1,31 @@
+.sidebar {
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    background-color: #F9F9F9;
+}
+
+h2 {
+    font-size: 1.8rem;
+    padding: 1rem 3rem;
+    border-bottom: 1px solid #cdc7c7;
+}
+
+.side-nav-items {
+    margin: 0;
+    padding: 0;
+}
+
+.side-nav-items li {
+    list-style: none;
+    /* padding: 1rem; */
+    border-bottom: 1px solid #cdc7c7;
+}
+
+.side-nav-items li a {
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    margin: 0 1.2rem;
+    padding: 1rem 4rem;
+}
