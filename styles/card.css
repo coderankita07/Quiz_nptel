@@ -1,9 +1,11 @@
 .card {
     background-color: rgb(194, 45, 45);
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     padding: 1rem;
     color: white;
     margin-bottom: 2rem;
+    letter-spacing: 0.05rem;
+    line-height: 2.2rem;
 }
 
 .card .que-statement {
@@ -24,9 +26,28 @@
 }
 
 #selected {
-    color: black;
+    /* color: black; */
+    color: #ffffb3;
 }
 
 .reveal {
-    color: green !important;
+    /* color: green !important; */
+    color: #7ce960 !important;
+}
+
+.card-button {
+    margin-top: 0.8rem;
+}
+
+.card-button button {
+    padding: 0.5rem;
+    margin-left: 0.1rem;
+    margin-right: 0.5rem;
+    /* border: none; */
+    /* background-color: rgb(79, 128, 0); */
+    /* color: white; */
+}
+
+.card-button button:hover {
+    cursor: pointer;
 }

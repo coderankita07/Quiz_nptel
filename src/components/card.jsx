@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
+import ReactHtmlParser from "react-html-parser";
 import "../../styles/card.css";
 
 const Card = ({ questions, rightAnswers, images, ...props }) => {
-  const {answers, setAnswers, reveal, setReveal } = props;
+  const { answers, setAnswers, reveal, setReveal } = props;
   const { id } = useParams();
 
   const week = questions[`week${id}`];
   const rightAnswer = rightAnswers[`week${id}`];
-  const image = images[`week${id}`]
+  const image = images[`week${id}`];
 
-  if (week == undefined) return <></>;
+  if (week == undefined || image == undefined) return <></>;
 
   const optionClicked = (option) => {
     setSelect(option);
@@ -45,15 +46,18 @@ const Card = ({ questions, rightAnswers, images, ...props }) => {
   };
 
   return week.map((question, i) => {
+    let size = question.length;
+    // if(question[0] == "headline") return <></>;
+
     return (
       <>
         <div className="card" key={i}>
           <div className="que-statement">
-            <h3>Question {i + 1}:</h3>
-            <p>{question[0]}</p>
+            {size != 1 && <h3>Question {i + 1}:</h3>}
+            <p>{ReactHtmlParser(question[0])}</p>
           </div>
 
-          {image[i] != "" && <img src={image[i]} />}
+          {image[i] != undefined && image[i] != "" && <img src={image[i]} />}
           {question.map((option, j) => {
             return (
               j != 0 && (
@@ -73,51 +77,26 @@ const Card = ({ questions, rightAnswers, images, ...props }) => {
             );
           })}
 
-
-          <button className="btn reveal-btn" onClick={() => handleReveal(i)}>
-            Reveal Answer
-          </button>
-          <button
-            className="btn clear-btn"
-            onClick={() => handleClearResponse(i)}
-          >
-            Clear Response
-          </button>
+          {size != 1 && (
+            <div className="card-button">
+              <button
+                className="btn reveal-btn"
+                onClick={() => handleReveal(i)}
+              >
+                Reveal Answer
+              </button>
+              <button
+                className="btn clear-btn"
+                onClick={() => handleClearResponse(i)}
+              >
+                Clear Response
+              </button>
+            </div>
+          )}
         </div>
       </>
     );
   });
-
-  return (
-    <div className="card">
-      <div className="que-statement">
-        <h3>Question 1:</h3>
-        <p>This is my question.. What do you think should be an ideal way?</p>
-      </div>
-      <div className="options">
-        <div
-          className="option"
-          id={selected == 1 ? "selected" : undefined}
-          onClick={() => optionClicked(1)}
-        >
-          <span className="option-tag">A:</span>
-          <span className="option-value">Option-1</span>
-        </div>
-        <div className="option">
-          <span className="option-tag">B:</span>
-          <span className="option-value">Option-2</span>
-        </div>
-        <div className="option">
-          <span className="option-tag">C:</span>
-          <span className="option-value">Option-3</span>
-        </div>
-        <div className="option">
-          <span className="option-tag">D:</span>
-          <span className="option-value">Option-4</span>
-        </div>
-      </div>
-    </div>
-  );
 };
 
 export default Card;

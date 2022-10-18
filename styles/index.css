@@ -4,4 +4,14 @@
 
 html {
     font-size: 65%;
+    /* font-family: 'Montserrat', sans-serif; */
+    font-family: 'Roboto', sans-serif;
+}
+
+.final-btn button {
+    display: inline-block;
+    padding: 0.5rem 5rem;
+    margin-left: 0.1rem;
+    margin-right: 0.5rem;
+    /* border: none; */
 }
