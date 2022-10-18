@@ -53,8 +53,8 @@ const Card = ({ questions, rightAnswers, images, ...props }) => {
       <>
         <div className="card" key={i}>
           <div className="que-statement">
-            {size != 1 && <h3>Question {i + 1}:</h3>}
-            <p>{ReactHtmlParser(question[0])}</p>
+            {size != 1 && <h3 className="question-number">Question {i + 1}:</h3>}
+            <p className="question">{ReactHtmlParser(question[0])}</p>
           </div>
 
           {image[i] != undefined && image[i] != "" && <img src={image[i]} />}

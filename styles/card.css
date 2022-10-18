@@ -1,22 +1,26 @@
 .card {
-    background-color: rgb(194, 45, 45);
+    /* background-color: rgb(161, 133, 133); */
+    background-color: #F9F9F9;
     font-size: 1.7rem;
     padding: 1rem;
-    color: white;
+    /* color: white; */
+    color: black;
     margin-bottom: 2rem;
     letter-spacing: 0.05rem;
     line-height: 2.2rem;
 }
 
 .card .que-statement {
-    padding: 1rem 0rem;
+    padding: 1rem 0rem 0.5rem 0;
 }
 
 .option-tag {
     display: inline-block;
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
+    background-color: rgba(234, 236, 237, 0.865);
     color: black;
-    padding: 0.5rem;
+    /* color: white; */
+    padding: 0.5rem 0.7rem;
     margin: 0.5rem 0.5rem;
     /* margin-right: 0.5rem; */
 }
@@ -27,22 +31,25 @@
 
 #selected {
     /* color: black; */
-    color: #ffffb3;
+    /* color: #ffffb3; */
+    /* color: #d91d1d; */
+    color: #ed0000;
 }
 
 .reveal {
-    /* color: green !important; */
-    color: #7ce960 !important;
+    color: green !important;
+    /* color: #7ce960 !important; */
 }
 
 .card-button {
-    margin-top: 0.8rem;
+    margin-top: 1rem;
+    margin-bottom: 0.8rem;
 }
 
 .card-button button {
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
     margin-left: 0.1rem;
-    margin-right: 0.5rem;
+    margin-right: 1rem;
     /* border: none; */
     /* background-color: rgb(79, 128, 0); */
     /* color: white; */
@@ -50,4 +57,12 @@
 
 .card-button button:hover {
     cursor: pointer;
+}
+
+.question-number {
+    margin-bottom: 1rem;
+}
+
+.question {
+    margin: 0;
 }
