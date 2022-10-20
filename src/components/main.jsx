@@ -17,7 +17,6 @@ const Main = ({ questions, rightAnswers, images }) => {
     handleReset();
   }, [id]);
 
-
   const week = questions[`week${id}`];
   const rightAnswer = rightAnswers[`week${id}`];
 
@@ -41,7 +40,7 @@ const Main = ({ questions, rightAnswers, images }) => {
     console.log("Right answers: ", count);
   };
 
-  if(week == undefined) return <></>;
+  if (week == undefined) return <></>;
 
   return (
     <>
@@ -54,14 +53,22 @@ const Main = ({ questions, rightAnswers, images }) => {
         reveal={reveal}
         setReveal={setReveal}
       />
-      <div className="final-btn">
-        <button onClick={handleSubmit}>Submit</button>
-        <button onClick={handleReset}>Reset Quiz</button>
-      </div>
 
-      {rightReponse != -1 && (
-        <p className="score">Your score: {rightReponse} / 10</p>
-      )}
+      <div className="final-btn">
+        <div class="score-wrapper">
+          {rightReponse != -1 && (
+            <p className="score">Your score: {rightReponse} / 10</p>
+          )}
+        </div>
+        <div className="final-btn-wrapper">
+          <button onClick={handleSubmit} className="submit">
+            Submit
+          </button>
+          <button onClick={handleReset} className="reset">
+            Reset Quiz
+          </button>
+        </div>
+      </div>
     </>
   );
 };

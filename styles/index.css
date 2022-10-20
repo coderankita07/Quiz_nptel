@@ -1,23 +1,31 @@
-*, ::after, ::before {
-    margin: 0;
+*,
+::after,
+::before {
+  margin: 0;
 }
 
 html {
-    font-size: 65%;
-    /* font-family: 'Montserrat', sans-serif; */
-    font-family: 'Roboto', sans-serif;
+  font-size: 65%;
+  /* font-family: 'Montserrat', sans-serif; */
+  font-family: "Roboto", sans-serif;
 }
 
 .final-btn {
-    display: flex;
-    margin-top: 2rem;
-    /* justify-content: center; */
+  display: flex;
+  margin-top: 2rem;
+  /* justify-content: center; */
 }
 
 .final-btn button {
-    display: inline-block;
-    padding: 1rem 5rem;
-    /* margin-left: 0.1rem; */
-    margin-right: 2rem;
-    /* border: none; */
+  display: inline-block;
+  padding: 0.7rem 4rem;
+  /* margin-left: 0.1rem; */
+  margin-right: 2rem;
+  /* border: none; */
+}
+
+@media screen and (max-width: 850px) {
+  html {
+    font-size: 50%;
+  }
 }
