@@ -15,6 +15,7 @@ const Main = ({ questions, rightAnswers, images }) => {
 
   useEffect(() => {
     handleReset();
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
   }, [id]);
 
   const week = questions[`week${id}`];

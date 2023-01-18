@@ -1,7 +1,8 @@
 .sidebar {
-    font-size: 1.6rem;
     display: flex;
     flex-direction: column;
+    flex-shrink: 1;
+    font-size: 1.6rem;
     background-color: #F9F9F9;
     /* line-height: 4rem; */
     letter-spacing: 0.05rem;

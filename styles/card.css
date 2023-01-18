@@ -9,8 +9,16 @@
     letter-spacing: 0.05rem;
     line-height: 2.2rem;
     border: 1px solid rgb(246, 243, 243);
+    /* min-width: 0; */
     /* box-shadow: 1px 1px 1px 1px rgba(0,0,0,.15); */
     /* box-shadow: 1px 3px 10px 1px rgba(201, 191, 191, 0.4); */
+}
+
+@media (max-width: 349px) {
+    .card > * {
+        padding: 0;
+        margin: 0;
+    }
 }
 
 .card .que-statement {
@@ -48,6 +56,13 @@
 .card-button {
     margin-top: 1rem;
     margin-bottom: 0.8rem;
+}
+
+@media (max-width: 349px) {
+    .card-button {
+        display: flex;
+        justify-content: center;
+    }
 }
 
 .card-button button {
@@ -118,6 +133,12 @@
     justify-content: center;
 }
 
+@media (max-width: 349px) {
+    .final-btn-wrapper {
+        display: flex;
+    }
+}
+
 .final-btn-wrapper button {
     display: inline-block;
     border:none;
@@ -129,8 +150,8 @@
     color: white;
 }
 
+cursor: pointer;
 .final-btn-wrapper button:hover {
-    cursor: pointer;
 }
 
 .score-wrapper {
