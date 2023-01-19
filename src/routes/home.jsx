@@ -36,7 +36,6 @@ const Home = () => {
     <>
       <Navbar />
       <div className="container">
-        
         <div className={toggleNavbar()} id="fixed-left">
           <Sidebar className="left" />
         </div>

@@ -9,9 +9,18 @@
     letter-spacing: 0.05rem;
     line-height: 2.2rem;
     border: 1px solid rgb(246, 243, 243);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     /* min-width: 0; */
     /* box-shadow: 1px 1px 1px 1px rgba(0,0,0,.15); */
     /* box-shadow: 1px 3px 10px 1px rgba(201, 191, 191, 0.4); */
+}
+
+.card img {
+    /* display: inline-block; */
+    /* overflow: hidden; */
+    max-width: 30%;
 }
 
 @media (max-width: 349px) {

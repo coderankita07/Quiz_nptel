@@ -6,13 +6,17 @@
 }
 
 .left {
-  max-height: 82vh;
   position: fixed;
-  top: 7rem;
+  top: 0;
+  padding-top: 7rem;
+  /* margin-top: 7rem; */
+  max-height: calc(100vh - 7rem);
   display: flex;
-  background-color: #F9F9F9;
-  /* bottom: 7rem; */
-  overflow-y: hidden;
+  align-items: center;
+  /* border: 1px solid #e6e6e6; */
+  /* height: 100vh; */
+  /* background-color: #F9F9F9; */
+  /* overflow-y: hidden; */
 }
 
 #fixed-left::-webkit-scrollbar-thumb {
@@ -36,13 +40,18 @@
   overflow-y: auto;
 }
 
-@media (max-width: 580px) {
+/* .right {
+  overflow: hidden;
+} */
+
+@media (max-width: 788px) {
   .left {
     /* display:none; */
     left: -18.5rem;
     transition: all 0.3s ease-in-out;
     z-index: 999999;
-    /* transform: translateX(-2.7rem) */
+    padding-top: 11rem;
+    max-height: calc(100vh - 11rem);
   }
 
   .right {
@@ -51,7 +60,7 @@
   }
 }
 
-@media (max-width: 349px) {
+@media (max-width: 403px) {
   .container {
     margin-top: 16.5rem !important;
     display: flex;
@@ -64,16 +73,30 @@
   }
 
   .left {
-    margin-top: 6.5rem !important;
+    padding-top: 16.5rem;
+    max-height: 75vh;
+    /* margin-top: calc(16.5rem + 1rem) !important; */
+    /* bottom: 5rem; */
+    /* top: 0; */
+    /* top: 16.5rem !important; */
+    /* margin-top: 6.6rem !important; */
+    /* max-height: 70vh !important; */
+    /* top: 0 !important; */
+    /* height: 100vh !important; */
+    /* top: 16.5rem !important; */
+    /* bottom: 10rem !important; */
+    /* max-height: 60vh; */
+    /* top: 22rem !important; */
+    /* bottom: 10rem !important; */
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 788px) {
   .container {
     margin-top: 10rem;
   }
 
   .left {
-    top: 10rem;
+    /* top: 10rem; */
   }
 }
 
@@ -97,7 +120,7 @@
 
 .toggle-button {
   position: fixed;
-  top: 53vh;
+  top: 50vh;
   left: 0;
   display: none;
   justify-content: center;
@@ -130,7 +153,7 @@
   transform: translateX(18.5rem);
 }
 
-@media (max-width: 580px) {
+@media (max-width: 788px) {
   .toggle-button {
     display: flex;
   }
