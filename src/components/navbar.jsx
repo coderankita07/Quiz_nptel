@@ -1,16 +1,19 @@
+/** External */
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "../../styles/navbar.css";
+
+/** Styles */
+import classes from "../../styles/navbar.module.css";
 
 const Navbar = () => {
   return (
-    <nav className="nav">
-      <div className="brand">
+    <nav className={classes.container}>
+      <div className={classes.brand}>
         <h1>
           <NavLink to="/">Nptel Revision Portal</NavLink>
         </h1>
       </div>
-      <ul className="nav-links">
+      <ul className={classes.navLinkContainer}>
         <li>
           <NavLink to="/">Home</NavLink>
         </li>

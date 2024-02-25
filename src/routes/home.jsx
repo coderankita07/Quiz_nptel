@@ -1,53 +1,37 @@
+/** External */
 import React, { useState } from "react";
+import { Navigate, Route, Routes } from "react-router-dom";
+
+/** Components */
+import About from "./about";
+import Main from "../components/main";
 import Navbar from "../components/navbar";
 import Sidebar from "../components/sidebar";
-import Main from "../components/main";
-import { questions, rightAnswers, images } from "../../db/db";
-import "../../styles/home.css";
-import { Navigate, Route, Routes } from "react-router-dom";
-import About from "./about";
+
+/** Utils */
+import { questions, rightAnswers, images } from "../../db";
+
+/** Styles */
+import classes from "../../styles/home.module.css";
 
 const Home = () => {
-  const [toggle, setToggle] = useState(false);
-
-  const handleToggle = () => {
-    let newToggle = !toggle;
-    setToggle(newToggle);
-    console.log('I am clicke');
-  }
-
-  function toggleCSS() {
-    return toggle ? 'toggle-button toggle-button-active' : 'toggle-button';
-  }
-
-  function toggleNavbar() {
-    return toggle ? 'left left-active' : 'left';
-  }
-
-  function translateRight() {
-    return toggle ? 'right right-translate' : 'right';
-  }
-
-  function menuButtonContent() {
-    return toggle ? '<' : '>';
-  }
-
   return (
-    <>
+    <div className={classes.container}>
       <Navbar />
-      <div className="container">
-        <div className={toggleNavbar()} id="fixed-left">
-          <Sidebar className="left" />
-        </div>
-        <div className={toggleCSS()} onClick={handleToggle}>
-          {menuButtonContent()}
-        </div>
-        <div className={translateRight()}>
+
+      <div className={classes.bodyContainer}>
+        <Sidebar shouldHideForSmallScreens />
+
+        <div className={classes.rightContainer}>
           <Routes>
             <Route
               path="/week/:id"
               element={
-                <Main questions={questions} rightAnswers={rightAnswers} images={images} />
+                <Main
+                  questions={questions}
+                  rightAnswers={rightAnswers}
+                  images={images}
+                />
               }
             />
             <Route path="/about" element={<About />} />
@@ -55,7 +39,7 @@ const Home = () => {
           </Routes>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
