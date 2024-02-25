@@ -1,0 +1,80 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: #f9f9f9;
+  font-size: 1.7rem;
+  padding: 1rem;
+  color: black;
+  margin-bottom: 2rem;
+  letter-spacing: 0.05rem;
+  line-height: 2.2rem;
+  border: 1px solid rgb(246, 243, 243);
+}
+
+.questionContainer {
+  padding: 1rem 0rem 0.5rem 0;
+}
+
+.questionNumber {
+  margin-bottom: 1rem;
+}
+
+.questionText {
+  margin: 0;
+}
+
+.option {
+  cursor: pointer;
+}
+
+.optionTag {
+  display: inline-block;
+  background-color: rgba(234, 236, 237, 0.865);
+  color: black;
+  padding: 0.5rem 0.7rem;
+  margin: 0.5rem 0.5rem;
+}
+
+.buttonContainer {
+  margin-top: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.revealBtn {
+  background-color: rgb(78, 177, 78);
+  color: white;
+  border: none;
+}
+
+.buttonContainer button {
+  padding: 0.9rem 1.2rem;
+  margin-top: 0.4rem;
+  margin-left: 0.5rem;
+  margin-right: 1rem;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.revealBtn:hover {
+  background-color: rgb(47, 148, 47);
+}
+
+.revealBtn:active {
+  background-color: rgb(78, 177, 78);
+}
+
+.clearBtn {
+  background-color: rgb(236, 66, 66);
+  color: white;
+  border: none;
+  margin-left: 0.3rem !important;
+}
+
+.clearBtn:hover {
+  background-color: rgb(227 47 47);
+}
+
+.clearBtn:active {
+  background-color: rgb(236, 66, 66);
+}
