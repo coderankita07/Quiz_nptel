@@ -28,6 +28,14 @@
   cursor: pointer;
 }
 
+.selectedOption {
+  color: #ed0000;
+}
+
+.correctOption {
+  color: #28a745;
+}
+
 .optionTag {
   display: inline-block;
   background-color: rgba(234, 236, 237, 0.865);
