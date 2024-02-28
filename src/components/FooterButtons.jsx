@@ -7,11 +7,11 @@ import classes from "../../styles/FooterButtons.module.css";
 const FooterButtons = ({ correctAnswerCount, onClickSubmit, onClickReset }) => {
   return (
     <div className={classes.container}>
-      <div className={classes.scoreContainer}>
-        {correctAnswerCount && correctAnswerCount != -1 && (
+      {correctAnswerCount !== -1 ? (
+        <div className={classes.scoreContainer}>
           <p className="score">Your score: {correctAnswerCount} / 10</p>
-        )}
-      </div>
+        </div>
+      ) : null}
 
       <div className={classes.btnContainer}>
         <button onClick={onClickSubmit} className={classes.submitBtn}>

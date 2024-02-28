@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   margin-bottom: 28px;
 }
 
@@ -16,7 +16,8 @@
 }
 
 .btnContainer button {
-  padding: 0.9rem 1.2rem;
+  width: 100px;
+  height: 38px;
   border-radius: 2px;
   border: none;
   color: white;

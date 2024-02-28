@@ -11,6 +11,7 @@ const Questions = ({ questions, rightAnswers, images }) => {
     new Array(10).fill(-1)
   );
   const [revealAnswer, setRevealAnswer] = useState(new Array(10).fill(false));
+  const [correctAnswersCount, setCorrectAnswersCount] = useState(-1);
 
   const { id } = useParams();
 
@@ -53,6 +54,31 @@ const Questions = ({ questions, rightAnswers, images }) => {
     setRevealAnswer(newRevealAnswer);
   };
 
+  const calculateAndSetCorrectAnswersCount = () => {
+    let correctAnswers = 0;
+    for (let i = 0; i < selectedAnswers.length; i++) {
+      if (selectedAnswers[i] - 1 === rightAnswersForCurrentWeek[i])
+        correctAnswers++;
+    }
+
+    setCorrectAnswersCount(correctAnswers);
+  };
+
+  const handleClickSubmitTest = () => {
+    const revealAllAnswers = new Array(10).fill(true);
+    setRevealAnswer(revealAllAnswers);
+    calculateAndSetCorrectAnswersCount();
+  };
+
+  const handleClickReset = () => {
+    const resetedRevealedAnswers = new Array(10).fill(false);
+    setRevealAnswer(resetedRevealedAnswers);
+
+    const resetSelectedAnswers = new Array(10).fill(-1);
+    setSelectedAnswers(resetSelectedAnswers);
+    setCorrectAnswersCount(-1);
+  };
+
   if (currentWeekQuestions == undefined) return <>Invalid url</>;
 
   console.log({ currentWeekQuestions });
@@ -75,7 +101,11 @@ const Questions = ({ questions, rightAnswers, images }) => {
         );
       })}
 
-      <FooterButtons />
+      <FooterButtons
+        correctAnswerCount={correctAnswersCount}
+        onClickSubmit={handleClickSubmitTest}
+        onClickReset={handleClickReset}
+      />
     </div>
   );
 };
