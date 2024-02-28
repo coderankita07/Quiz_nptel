@@ -4,7 +4,6 @@ import { Navigate, Route, Routes } from "react-router-dom";
 
 /** Components */
 import About from "./about";
-import Main from "../components/main";
 import Navbar from "../components/navbar";
 import Sidebar from "../components/sidebar";
 
@@ -13,6 +12,7 @@ import { questions, rightAnswers, images } from "../../db";
 
 /** Styles */
 import classes from "../../styles/home.module.css";
+import Questions from "../components/Questions";
 
 const Home = () => {
   return (
@@ -27,7 +27,7 @@ const Home = () => {
             <Route
               path="/week/:id"
               element={
-                <Main
+                <Questions
                   questions={questions}
                   rightAnswers={rightAnswers}
                   images={images}

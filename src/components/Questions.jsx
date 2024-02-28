@@ -16,7 +16,7 @@ const Questions = ({ questions, rightAnswers, images }) => {
   const { id } = useParams();
 
   useEffect(() => {
-    handleReset();
+    handleClickReset();
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, [id]);
 
