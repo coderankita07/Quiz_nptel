@@ -79,7 +79,6 @@ const Questions = ({ questions, rightAnswers, images }) => {
 
   if (currentWeekQuestions == undefined) return <>Invalid url</>;
 
-  console.log({ currentWeekQuestions });
   return (
     <div>
       {currentWeekQuestions.map((question, index) => {

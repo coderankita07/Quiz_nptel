@@ -42,12 +42,18 @@ ul {
 .toggleNavbarButton {
   display: none;
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 100%;
   background-color: rgba(165, 42, 42, 0.5);
   padding: 8px 4px;
   color: white;
   cursor: pointer;
+}
+
+@media screen and (max-width: 400px) {
+  .toggleNavbarButton {
+    top: 40%;
+  }
 }
 
 .toggleNavbarButton:hover {

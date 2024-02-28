@@ -25,3 +25,10 @@
   background-clip: padding-box;
   opacity: 1;
 }
+
+@media screen and (max-width: 632px) {
+  .moveToTopBtn {
+    font-size: 54px;
+    right: 10px;
+  }
+}
