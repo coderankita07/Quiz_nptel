@@ -1,9 +1,8 @@
 /** External */
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 /** Components */
 import Questions from "./Questions";
-import FooterButtons from "./FooterButtons";
 
 const Main = ({ questions, rightAnswers, images }) => {
   return (
@@ -13,8 +12,6 @@ const Main = ({ questions, rightAnswers, images }) => {
         rightAnswers={rightAnswers}
         images={images}
       />
-
-      <FooterButtons />
     </>
   );
 };

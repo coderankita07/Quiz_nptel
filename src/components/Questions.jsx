@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 
 /** Components */
 import QuestionCard from "./QuestionCard";
+import FooterButtons from "./FooterButtons";
 
 const Questions = ({ questions, rightAnswers, images }) => {
   const [selectedAnswers, setSelectedAnswers] = useState(
@@ -26,17 +27,6 @@ const Questions = ({ questions, rightAnswers, images }) => {
   const handleReset = () => {
     const reset = new Array(10).fill(-1);
     setSelectedAnswers(reset);
-  };
-
-  const handleSubmit = () => {
-    let correctAnswersCount = answers.reduce(
-      (correctAnswersCount, selectedOption, index) => {
-        return selectedOption == rightAnswersForCurrentWeek[index]
-          ? correctAnswersCount++
-          : correctAnswersCount;
-      },
-      0
-    );
   };
 
   const handleRevealAnswer = (questionIndex) => {
@@ -84,6 +74,8 @@ const Questions = ({ questions, rightAnswers, images }) => {
           />
         );
       })}
+
+      <FooterButtons />
     </div>
   );
 };

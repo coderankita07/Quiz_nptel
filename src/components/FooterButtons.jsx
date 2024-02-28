@@ -4,23 +4,20 @@ import React from "react";
 /** Styles **/
 import classes from "../../styles/FooterButtons.module.css";
 
-const FooterButtons = ({
-  correctResponseCount,
-  onClickSubmit,
-  onClickReset,
-}) => {
+const FooterButtons = ({ correctAnswerCount, onClickSubmit, onClickReset }) => {
   return (
     <div className={classes.container}>
-      <div class="score-wrapper">
-        {correctResponseCount != -1 && (
-          <p className="score">Your score: {correctResponseCount} / 10</p>
+      <div className={classes.scoreContainer}>
+        {correctAnswerCount && correctAnswerCount != -1 && (
+          <p className="score">Your score: {correctAnswerCount} / 10</p>
         )}
       </div>
-      <div className="final-btn-wrapper">
-        <button onClick={onClickSubmit} className="submit">
+
+      <div className={classes.btnContainer}>
+        <button onClick={onClickSubmit} className={classes.submitBtn}>
           Submit
         </button>
-        <button onClick={onClickReset} className="reset">
+        <button onClick={onClickReset} className={classes.resetBtn}>
           Reset Quiz
         </button>
       </div>
