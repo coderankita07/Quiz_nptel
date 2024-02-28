@@ -25,11 +25,6 @@ const Questions = ({ questions, rightAnswers, images }) => {
   const currentWeekImages = images[weekId];
   const rightAnswersForCurrentWeek = rightAnswers[weekId];
 
-  const handleReset = () => {
-    const reset = new Array(10).fill(-1);
-    setSelectedAnswers(reset);
-  };
-
   const handleRevealAnswer = (questionIndex) => {
     const newRevealAnswer = [...revealAnswer];
     newRevealAnswer[questionIndex] = true;
@@ -57,7 +52,7 @@ const Questions = ({ questions, rightAnswers, images }) => {
   const calculateAndSetCorrectAnswersCount = () => {
     let correctAnswers = 0;
     for (let i = 0; i < selectedAnswers.length; i++) {
-      if (selectedAnswers[i] - 1 === rightAnswersForCurrentWeek[i])
+      if (selectedAnswers[i] === rightAnswersForCurrentWeek[i])
         correctAnswers++;
     }
 
