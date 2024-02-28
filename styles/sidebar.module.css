@@ -5,7 +5,7 @@
   font-size: 1.6rem;
   background-color: #f9f9f9;
   letter-spacing: 0.05rem;
-  height: calc(97% - 7rem);
+  align-self: flex-start;
   width: 154px;
 }
 

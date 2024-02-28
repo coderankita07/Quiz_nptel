@@ -6,6 +6,9 @@ import { useParams } from "react-router-dom";
 import QuestionCard from "./QuestionCard";
 import FooterButtons from "./FooterButtons";
 
+/** Utils */
+import { scrollContainerToTop } from "../utils/common";
+
 const Questions = ({ questions, rightAnswers, images }) => {
   const [selectedAnswers, setSelectedAnswers] = useState(
     new Array(10).fill(-1)
@@ -17,7 +20,7 @@ const Questions = ({ questions, rightAnswers, images }) => {
 
   useEffect(() => {
     handleClickReset();
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    scrollContainerToTop();
   }, [id]);
 
   const weekId = `week${id}`;
