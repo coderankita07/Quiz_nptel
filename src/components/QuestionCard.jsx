@@ -24,7 +24,9 @@ const QuestionCard = ({
         <p className={classes.questionText}>{ReactHtmlParser(question[0])}</p>
       </div>
 
-      {questionImage ? <img src={questionImage} /> : null}
+      {questionImage ? (
+        <img src={questionImage} className={classes.image} />
+      ) : null}
 
       {question.map((option, index) => {
         const optionClasses = classNames(classes.option, {

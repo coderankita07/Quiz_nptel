@@ -1,6 +1,7 @@
 /** External */
-import React, { useState } from "react";
+import React from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
+import { TbCircleArrowUpFilled } from "react-icons/tb";
 
 /** Components */
 import About from "./about";
@@ -9,6 +10,7 @@ import Sidebar from "../components/sidebar";
 
 /** Utils */
 import { questions, rightAnswers, images } from "../../db";
+import { scrollContainerToTop } from "../utils/common";
 
 /** Styles */
 import classes from "../../styles/home.module.css";
@@ -37,6 +39,10 @@ const Home = () => {
             <Route path="/about" element={<About />} />
             <Route path="*" element={<Navigate to="/about" replace />} />
           </Routes>
+        </div>
+
+        <div className={classes.moveToTopBtn} onClick={scrollContainerToTop}>
+          <TbCircleArrowUpFilled />
         </div>
       </div>
     </div>

@@ -24,6 +24,10 @@
   margin: 0;
 }
 
+.image {
+  width: 30%;
+}
+
 .option {
   cursor: pointer;
 }
